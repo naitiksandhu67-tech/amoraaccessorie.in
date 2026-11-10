@@ -167,3 +167,270 @@ const PRODUCTS = [
   {id:2, name:"Gold Hoop Earrings", cat:"Earrings", price:249, mrp:399, img:"", emoji:"✨"},
   {id:3, name:"Floral Stud Earrings", cat:"Earrings", price:199, mrp:349, img:"", emoji:"✨"},
   {id:4, name:"Heart Pendant Necklace", cat:"Necklaces", price:399, mrp:649, img:"", emoji:"💎"},
+  {id:5, name:"Layered Chain Necklace", cat:"Necklaces", price:449, mrp:699, img:"", emoji:"💎"},
+  {id:6, name:"Star Pendant Necklace", cat:"Necklaces", price:349, mrp:549, img:"", emoji:"💎"},
+  {id:7, name:"Flower Charm Bracelet", cat:"Bracelets", price:299, mrp:499, img:"", emoji:"🌸"},
+  {id:8, name:"Knot Chain Bracelet", cat:"Bracelets", price:279, mrp:449, img:"", emoji:"🌸"},
+  {id:9, name:"Pearl Beaded Bracelet", cat:"Bracelets", price:329, mrp:549, img:"", emoji:"🌸"},
+  {id:10, name:"Adjustable Gold Ring", cat:"Rings", price:199, mrp:349, img:"", emoji:"💍"},
+  {id:11, name:"Twin Band Ring", cat:"Rings", price:229, mrp:399, img:"", emoji:"💍"},
+  {id:12, name:"Crystal Stone Ring", cat:"Rings", price:249, mrp:429, img:"", emoji:"💍"},
+  {id:13, name:"Classic Gold Watch", cat:"Watches", price:899, mrp:1399, img:"", emoji:"⌚"},
+  {id:14, name:"Silver Mesh Watch", cat:"Watches", price:849, mrp:1299, img:"", emoji:"⌚"},
+  {id:15, name:"Gift Hamper - Classic", cat:"Hampers", price:799, mrp:1099, img:"", emoji:"🎁"},
+  {id:16, name:"Gift Hamper - Premium", cat:"Hampers", price:1299, mrp:1799, img:"", emoji:"🎁"}
+];
+</script>
+<!-- ============ END OF EDIT SECTION ============ -->
+
+<div class="ann" id="ann"></div>
+
+<header>
+  <div class="wrap hd">
+    <a href="#top" class="logo" id="logo"></a>
+    <button class="cartbtn" onclick="openCart()">🛒 Cart<span id="count">0</span></button>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero" id="top">
+    <span class="fl">✨</span><span class="fl">💖</span><span class="fl">🎀</span><span class="fl">✨</span><span class="fl">🌸</span><span class="fl">💫</span>
+    <h1 id="heroTitle"></h1>
+    <p id="heroTag"></p>
+    <div class="btns">
+      <a href="#shop" class="btn">Shop Now 🛍️</a>
+      <a class="btn out waLink" target="_blank" rel="noopener">Chat With Us 💬</a>
+    </div>
+  </section>
+</div>
+
+<section id="shop">
+  <div class="wrap">
+    <h2 class="sec">Shop by Category</h2>
+    <p class="sub">Tap a category to see everything in it</p>
+    <div class="tabs" id="tabs"></div>
+    <div class="grid" id="grid"></div>
+
+    <div class="trust">
+      <div class="tb"><i>💬</i><b>Order on WhatsApp</b>Your order is confirmed with us directly on WhatsApp.</div>
+      <div class="tb"><i>💸</i><b>UPI &amp; COD</b>Pay the way you like (COD where available).</div>
+      <div class="tb"><i>📦</i><b>Shipping Across India</b>Safely packed and shipped to your door.</div>
+      <div class="tb"><i>🎀</i><b>Gift Ready</b>Perfect for birthdays, couples and best friends.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="logo" id="flogo"></span>
+  <p><a id="igLink" target="_blank" rel="noopener">Instagram</a> &middot; <a class="waLink" target="_blank" rel="noopener">WhatsApp</a></p>
+  <ul id="policy"></ul>
+  <p>&copy; 2026 <span id="fbrand"></span>. All rights reserved. 💖</p>
+</footer>
+
+<a class="wafloat waLink" target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
+
+<div class="ov" id="ov" onclick="closeCart()"></div>
+<aside class="drawer" id="drawer">
+  <div class="dh"><h3>Your Cart 🛒</h3><button onclick="closeCart()" aria-label="Close">&times;</button></div>
+  <div class="items" id="items"></div>
+  <div class="df">
+    <div class="row"><span>Subtotal</span><span id="sub"></span></div>
+    <div class="row"><span>Shipping</span><span id="ship"></span></div>
+    <div class="row t"><span>Total</span><span id="tot"></span></div>
+    <button class="btn full" id="checkoutBtn" onclick="openCheckout()">Checkout</button>
+    <p class="note" id="shipNote"></p>
+  </div>
+</aside>
+
+<div class="modal" id="modal">
+  <div class="mbox">
+    <div id="formView">
+      <div class="mh"><h3>Checkout &middot; <span id="orderId"></span></h3><button onclick="closeCheckout()" aria-label="Close">&times;</button></div>
+      <form id="coForm">
+        <label for="cName">Full name</label>
+        <input id="cName" required autocomplete="name">
+        <label for="cPhone">Phone number (10 digits)</label>
+        <input id="cPhone" required inputmode="numeric" maxlength="10" autocomplete="tel">
+        <label for="cAddr">Full address</label>
+        <textarea id="cAddr" required autocomplete="street-address"></textarea>
+        <div class="two">
+          <div><label for="cCity">City</label><input id="cCity" required></div>
+          <div><label for="cState">State</label><input id="cState" required></div>
+        </div>
+        <label for="cPin">Pincode</label>
+        <input id="cPin" required inputmode="numeric" maxlength="6">
+
+        <label>Payment method</label>
+        <label class="opt"><input type="radio" name="pay" value="UPI" checked onchange="updatePay()"> UPI (pay now)</label>
+        <label class="opt" id="codOpt"><input type="radio" name="pay" value="COD" onchange="updatePay()"> Cash on Delivery</label>
+
+        <div class="upi" id="upiBox">
+          <p>Pay <b id="upiAmt"></b> to UPI ID: <b id="upiIdShow"></b></p>
+          <p style="margin:8px 0"><a class="btn out" id="upiLink" style="padding:8px 16px">Open UPI app (mobile)</a></p>
+          <label for="cUtr" style="margin-top:6px">After paying, enter UPI transaction / UTR number</label>
+          <input id="cUtr" placeholder="e.g. 123456789012">
+        </div>
+
+        <div class="row" id="codfee" style="display:none;margin-top:12px"><span>COD charge</span><span id="codfeeAmt"></span></div>
+        <div class="row t" style="margin-top:14px"><span>Amount to pay</span><span id="gtot"></span></div>
+        <button class="btn full" type="submit">Place Order on WhatsApp 💬</button>
+        <p class="note">WhatsApp will open with your order details. <b>Please press Send</b> there, your order is confirmed only after we receive that message.</p>
+      </form>
+    </div>
+    <div class="ok" id="okView">
+      <h2>Almost done! 🎉</h2>
+      <p>WhatsApp has opened with your order <b id="okId"></b>.<br><b>Press Send</b> there to confirm it.</p>
+      <p style="margin:14px 0"><a class="btn" id="reopen" target="_blank" rel="noopener">Open WhatsApp again</a></p>
+      <button class="btn out" onclick="closeCheckout()">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const money = n => "\u20B9" + n.toLocaleString("en-IN");
+let cart = {}; try { cart = JSON.parse(localStorage.getItem("cart") || "{}"); } catch(e) {}
+function save(){ try { localStorage.setItem("cart", JSON.stringify(cart)); } catch(e) {} }
+let currentCat = "All", orderId = "", lastWaUrl = "";
+
+// Static texts
+document.title = CONFIG.brand + " | Jewellery & Accessories";
+$("#ann").textContent = "🎀 Free shipping above " + money(CONFIG.freeShippingAbove) + "  •  Handpicked with love ✨";
+$("#logo").textContent = CONFIG.brand;
+$("#flogo").textContent = CONFIG.brand;
+$("#fbrand").textContent = CONFIG.brand;
+$("#heroTitle").textContent = CONFIG.brand;
+$("#heroTag").textContent = CONFIG.tagline;
+$("#igLink").href = "https://instagram.com/" + CONFIG.instagram;
+document.querySelectorAll(".waLink").forEach(a => a.href = "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent("Hi, I have a question about your products"));
+$("#policy").innerHTML = CONFIG.policy.map(p => "<li>" + p + "</li>").join("");
+$("#upiIdShow").textContent = CONFIG.upiId;
+$("#shipNote").textContent = "Free shipping on orders above " + money(CONFIG.freeShippingAbove);
+$("#codfeeAmt").textContent = money(CONFIG.codFee);
+if (!CONFIG.codEnabled) $("#codOpt").remove();
+
+// Categories + products
+$("#tabs").innerHTML = CATS.map(c => `<button class="tab${c.n==="All"?" on":""}" onclick="setCat('${c.n}',this)">${c.e} ${c.n}</button>`).join("");
+function setCat(c, el){
+  currentCat = c;
+  document.querySelectorAll(".tab").forEach(t => t.classList.remove("on"));
+  el.classList.add("on");
+  renderProducts();
+}
+function off(p){ return p.mrp && p.mrp > p.price ? Math.round((1 - p.price / p.mrp) * 100) : 0; }
+function renderProducts(){
+  const list = PRODUCTS.filter(p => currentCat === "All" || p.cat === currentCat);
+  $("#grid").innerHTML = list.map(p => `
+    <div class="card">
+      <div class="pic p${p.id % 4}" style="${p.img ? `background-image:url('${p.img}')` : ""}">
+        ${p.img ? "" : (p.emoji || "\u2726")}
+        ${off(p) ? `<span class="badge">${off(p)}% OFF</span>` : ""}
+      </div>
+      <div class="cb">
+        <h3>${p.name}</h3>
+        <div class="pr"><b>${money(p.price)}</b>${p.mrp ? `<s>${money(p.mrp)}</s>` : ""}</div>
+        <button class="btn" onclick="addToCart(${p.id})">Add to Cart 🛒</button>
+      </div>
+    </div>`).join("");
+}
+
+// Cart
+function totals(){
+  let sub = 0;
+  for (const id in cart){ const p = PRODUCTS.find(x => x.id == id); if (p) sub += p.price * cart[id]; }
+  const ship = sub === 0 ? 0 : (sub >= CONFIG.freeShippingAbove ? 0 : CONFIG.shipping);
+  return {sub, ship};
+}
+function updateCount(){
+  let n = 0; for (const id in cart) n += cart[id];
+  $("#count").textContent = n;
+}
+function addToCart(id){ cart[id] = (cart[id] || 0) + 1; save(); updateCount(); openCart(); }
+function chg(id, d){
+  cart[id] = (cart[id] || 0) + d;
+  if (cart[id] <= 0) delete cart[id];
+  save(); updateCount(); renderCart();
+}
+function renderCart(){
+  const ids = Object.keys(cart).filter(id => PRODUCTS.find(p => p.id == id));
+  $("#items").innerHTML = ids.length ? ids.map(id => {
+    const p = PRODUCTS.find(x => x.id == id);
+    return `<div class="it">
+      <div class="thumb p${p.id % 4}" style="${p.img ? `background-image:url('${p.img}')` : ""}">${p.img ? "" : (p.emoji || "\u2726")}</div>
+      <div class="in"><div>${p.name}</div><div class="pr"><b>${money(p.price)}</b></div>
+        <div class="qty"><button onclick="chg(${p.id},-1)">-</button><span>${cart[id]}</span><button onclick="chg(${p.id},1)">+</button></div>
+      </div>
+      <button class="rm" onclick="chg(${p.id},-999)" aria-label="Remove">&times;</button>
+    </div>`;
+  }).join("") : '<p style="text-align:center;color:var(--muted);padding:40px 0">Your cart is empty 🥺</p>';
+  const t = totals();
+  $("#sub").textContent = money(t.sub);
+  $("#ship").textContent = t.ship ? money(t.ship) : "Free";
+  $("#tot").textContent = money(t.sub + t.ship);
+  $("#checkoutBtn").disabled = !ids.length;
+}
+function openCart(){ renderCart(); $("#drawer").classList.add("show"); $("#ov").classList.add("show"); }
+function closeCart(){ $("#drawer").classList.remove("show"); $("#ov").classList.remove("show"); }
+
+// Checkout
+function payMethod(){ return document.querySelector('input[name="pay"]:checked').value; }
+function grand(){ const t = totals(); return t.sub + t.ship + (payMethod() === "COD" ? CONFIG.codFee : 0); }
+function updatePay(){
+  const m = payMethod(), g = grand();
+  $("#upiBox").style.display = m === "UPI" ? "block" : "none";
+  $("#codfee").style.display = (m === "COD" && CONFIG.codFee) ? "flex" : "none";
+  $("#gtot").textContent = money(g);
+  $("#upiAmt").textContent = money(g);
+  $("#upiLink").href = "upi://pay?pa=" + encodeURIComponent(CONFIG.upiId) + "&pn=" + encodeURIComponent(CONFIG.upiName) + "&am=" + g + "&cu=INR&tn=" + orderId;
+}
+function openCheckout(){
+  if (!Object.keys(cart).length) return;
+  orderId = "ORD" + Math.floor(10000 + Math.random() * 90000);
+  $("#orderId").textContent = orderId;
+  closeCart();
+  $("#formView").style.display = "block";
+  $("#okView").style.display = "none";
+  updatePay();
+  $("#modal").classList.add("show");
+}
+function closeCheckout(){ $("#modal").classList.remove("show"); }
+
+$("#coForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const name = $("#cName").value.trim(), phone = $("#cPhone").value.trim(), addr = $("#cAddr").value.trim();
+  const city = $("#cCity").value.trim(), state = $("#cState").value.trim(), pin = $("#cPin").value.trim();
+  const m = payMethod(), utr = $("#cUtr").value.trim();
+  if (!/^[6-9]\d{9}$/.test(phone)) { alert("Please enter a valid 10-digit phone number."); return; }
+  if (!/^\d{6}$/.test(pin)) { alert("Please enter a valid 6-digit pincode."); return; }
+  if (m === "UPI" && utr.length < 6) { alert("Please pay by UPI first, then enter the transaction / UTR number."); return; }
+
+  const t = totals();
+  let n = 0;
+  const lines = Object.keys(cart).filter(id => PRODUCTS.find(p => p.id == id)).map(id => {
+    const p = PRODUCTS.find(x => x.id == id); n++;
+    return n + ". " + p.name + " x" + cart[id] + " = " + money(p.price * cart[id]);
+  });
+  const msg =
+    "New Order " + orderId + "\n\n" +
+    "Items:\n" + lines.join("\n") + "\n\n" +
+    "Subtotal: " + money(t.sub) + "\n" +
+    "Shipping: " + (t.ship ? money(t.ship) : "Free") + "\n" +
+    (m === "COD" && CONFIG.codFee ? "COD charge: " + money(CONFIG.codFee) + "\n" : "") +
+    "Total: " + money(grand()) + "\n\n" +
+    "Payment: " + (m === "UPI" ? "UPI (UTR: " + utr + ")" : "Cash on Delivery") + "\n\n" +
+    "Name: " + name + "\nPhone: " + phone + "\n" +
+    "Address: " + addr + ", " + city + ", " + state + " - " + pin;
+
+  lastWaUrl = "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(msg);
+  window.open(lastWaUrl, "_blank");
+  $("#okId").textContent = orderId;
+  $("#reopen").href = lastWaUrl;
+  $("#formView").style.display = "none";
+  $("#okView").style.display = "block";
+  cart = {}; save(); updateCount(); e.target.reset(); updatePay();
+});
+
+renderProducts(); updateCount();
+</script>
+</body>
+</html>
