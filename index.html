@@ -4,91 +4,134 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sample Jewels | Jewellery & Accessories</title>
-<meta name="description" content="Curated jewellery and accessories. Shipping across India. Order easily and get confirmation on WhatsApp.">
+<meta name="description" content="Cute, curated jewellery and accessories. Shipping across India. Order easily and get confirmation on WhatsApp.">
 <meta property="og:title" content="Sample Jewels | Jewellery & Accessories">
-<meta property="og:description" content="Curated jewellery & accessories, shipping across India.">
+<meta property="og:description" content="Cute, curated jewellery & accessories, shipping across India.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fffaf6;--ink:#2d2422;--muted:#7a6a66;--rose:#b5657a;--rose2:#9a4d62;--gold:#c8a04a;--line:#eadfd8;--card:#fff}
+:root{--ink:#4a3340;--muted:#9a7f8c;--pink:#ff8fb1;--pink2:#ee5f93;--lav:#cdbdff;--peach:#ffd9c9;--cream:#fff7f9;--line:#f6d9e4;--card:#fff}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
-h1,h2,h3{font-family:'Playfair Display',serif}
+body{font-family:'Quicksand',sans-serif;color:var(--ink);line-height:1.5;background:var(--cream);position:relative;min-height:100vh}
+body::before{content:"";position:fixed;inset:0;z-index:-1;
+ background:
+  radial-gradient(circle at 8% 8%,#ffd6e6 0,transparent 38%),
+  radial-gradient(circle at 92% 18%,#e3d8ff 0,transparent 38%),
+  radial-gradient(circle at 20% 88%,#ffe5d4 0,transparent 40%),
+  radial-gradient(circle at 85% 92%,#ffd6e6 0,transparent 35%),
+  var(--cream)}
+h1,h2,h3{font-family:'Pacifico',cursive;font-weight:400}
 button{font-family:inherit;cursor:pointer}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:1100px;margin:0 auto;padding:0 16px}
-header{position:sticky;top:0;z-index:40;background:rgba(255,250,246,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.hd{display:flex;align-items:center;justify-content:space-between;height:62px}
-.logo{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--rose2)}
-.cartbtn{background:var(--ink);color:#fff;border:0;border-radius:50px;padding:9px 18px;font-size:.9rem}
-.cartbtn span{background:var(--gold);color:#2d2422;border-radius:50px;padding:1px 8px;margin-left:6px;font-weight:600;font-size:.8rem}
-.hero{text-align:center;padding:56px 0 34px;background:linear-gradient(180deg,#f7e6e2,var(--bg))}
-.hero h1{font-size:clamp(2rem,7vw,3.4rem);margin-bottom:8px}
-.hero p{color:var(--muted);margin-bottom:20px}
-.btn{background:var(--rose);color:#fff;border:0;border-radius:50px;padding:11px 22px;font-size:.92rem;font-weight:500;transition:.2s;display:inline-block;text-align:center}
-.btn:hover{background:var(--rose2)}
-.btn:disabled{opacity:.5;cursor:not-allowed}
-.btn.out{background:transparent;color:var(--rose2);border:1.5px solid var(--rose)}
+
+/* announcement + header */
+.ann{background:linear-gradient(90deg,var(--pink),var(--lav));color:#fff;text-align:center;font-size:.85rem;font-weight:600;padding:7px 10px;letter-spacing:.3px}
+header{position:sticky;top:0;z-index:40;background:rgba(255,247,249,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Pacifico',cursive;font-size:1.45rem;color:var(--pink2)}
+.cartbtn{background:linear-gradient(135deg,var(--pink),var(--pink2));color:#fff;border:0;border-radius:50px;padding:9px 18px;font-size:.92rem;font-weight:700;box-shadow:0 6px 14px rgba(238,95,147,.3)}
+.cartbtn span{background:#fff;color:var(--pink2);border-radius:50px;padding:1px 8px;margin-left:6px;font-weight:700;font-size:.8rem}
+
+/* hero */
+.hero{position:relative;overflow:hidden;margin:18px auto 8px;max-width:1068px;border-radius:34px;text-align:center;padding:52px 18px 46px;
+ background:linear-gradient(135deg,#ffd0e2 0%,#e4d8ff 55%,#ffe4d3 100%);box-shadow:0 18px 40px rgba(238,95,147,.18)}
+.hero h1{font-size:clamp(2.1rem,8vw,3.6rem);color:#fff;text-shadow:0 3px 0 rgba(238,95,147,.45);margin-bottom:8px}
+.hero p{color:#7a566a;font-weight:600;margin-bottom:22px}
+.hero .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.fl{position:absolute;font-size:1.6rem;animation:fl 5s ease-in-out infinite;opacity:.9}
+.fl:nth-child(1){top:12%;left:7%}
+.fl:nth-child(2){top:20%;right:9%;animation-delay:1s;font-size:2rem}
+.fl:nth-child(3){bottom:14%;left:12%;animation-delay:2s}
+.fl:nth-child(4){bottom:18%;right:8%;animation-delay:.5s}
+.fl:nth-child(5){top:55%;left:3%;animation-delay:1.5s;font-size:1.2rem}
+.fl:nth-child(6){top:8%;left:48%;animation-delay:2.5s;font-size:1.2rem}
+@keyframes fl{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-12px) rotate(8deg)}}
+
+.btn{background:linear-gradient(135deg,var(--pink),var(--pink2));color:#fff;border:0;border-radius:50px;padding:11px 24px;font-size:.95rem;font-weight:700;transition:.2s;display:inline-block;text-align:center;box-shadow:0 6px 14px rgba(238,95,147,.28)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 18px rgba(238,95,147,.34)}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.btn.out{background:#fff;color:var(--pink2);border:2px solid var(--pink);box-shadow:none}
 .btn.full{width:100%}
-h2.sec{text-align:center;font-size:1.8rem;margin:34px 0 6px}
-.sub{text-align:center;color:var(--muted);margin-bottom:18px;font-size:.92rem}
-.tabs{display:flex;gap:8px;overflow-x:auto;padding:6px 0 14px;scrollbar-width:none}
+
+h2.sec{text-align:center;font-size:1.9rem;color:var(--pink2);margin:34px 0 4px}
+.sub{text-align:center;color:var(--muted);margin-bottom:16px;font-weight:500}
+
+/* category chips */
+.tabs{display:flex;gap:10px;overflow-x:auto;padding:8px 4px 16px;scrollbar-width:none}
 .tabs::-webkit-scrollbar{display:none}
-.tab{flex:0 0 auto;background:#fff;border:1px solid var(--line);color:var(--muted);border-radius:50px;padding:8px 18px;font-size:.9rem}
-.tab.on{background:var(--rose);border-color:var(--rose);color:#fff}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;padding-bottom:40px}
+.tab{flex:0 0 auto;background:#fff;border:2px solid var(--line);color:var(--muted);border-radius:50px;padding:9px 18px;font-size:.92rem;font-weight:700;transition:.2s}
+.tab:hover{border-color:var(--pink)}
+.tab.on{background:linear-gradient(135deg,var(--pink),var(--pink2));border-color:transparent;color:#fff;box-shadow:0 6px 14px rgba(238,95,147,.3)}
+
+/* products */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;padding-bottom:36px}
 @media(min-width:700px){.grid{grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px}}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:.25s}
-.card:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(80,40,40,.1)}
-.pic{aspect-ratio:1/1;background:linear-gradient(135deg,#f4dcd8,#f8ecd5);background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;font-size:2.6rem}
-.cb{padding:12px;display:flex;flex-direction:column;gap:6px;flex:1}
-.cb h3{font-size:.98rem;font-family:'Poppins',sans-serif;font-weight:500}
-.pr b{color:var(--rose2)}
+.card{background:var(--card);border:2px solid #fff;border-radius:24px;overflow:hidden;display:flex;flex-direction:column;transition:.25s;box-shadow:0 8px 22px rgba(238,95,147,.1);position:relative}
+.card:hover{transform:translateY(-6px);box-shadow:0 16px 30px rgba(238,95,147,.2)}
+.pic{aspect-ratio:1/1;background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative}
+.p0{background-color:#ffe1ec}.p1{background-color:#e8deff}.p2{background-color:#ffe8d9}.p3{background-color:#dff3ee}
+.badge{position:absolute;top:10px;left:10px;background:#fff;color:var(--pink2);font-weight:700;font-size:.74rem;border-radius:50px;padding:3px 10px;box-shadow:0 3px 8px rgba(0,0,0,.08)}
+.cb{padding:12px 12px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.cb h3{font-size:.98rem;font-family:'Quicksand',sans-serif;font-weight:700;color:var(--ink)}
+.pr b{color:var(--pink2);font-size:1.05rem}
 .pr s{color:var(--muted);font-size:.85rem;margin-left:6px}
-.cb .btn{margin-top:auto;width:100%;padding:9px}
-.trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;padding:10px 0 40px}
-.tb{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center;font-size:.9rem}
-.tb b{display:block;margin-bottom:4px;color:var(--rose2)}
-footer{background:#2d2422;color:#d9ccc6;padding:32px 16px 90px;text-align:center;font-size:.88rem}
-footer .logo{color:#fff;display:block;margin-bottom:8px}
+.cb .btn{margin-top:auto;width:100%;padding:9px;font-size:.88rem}
+
+/* trust */
+.trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;padding:6px 0 40px}
+.tb{background:#fff;border:2px dashed var(--pink);border-radius:22px;padding:18px 14px;text-align:center;font-size:.9rem;font-weight:500;color:var(--muted)}
+.tb i{display:block;font-style:normal;font-size:1.8rem;margin-bottom:4px}
+.tb b{display:block;margin-bottom:3px;color:var(--pink2);font-size:1rem}
+
+footer{background:linear-gradient(135deg,#ffd0e2,#e4d8ff);color:var(--ink);padding:34px 16px 96px;text-align:center;font-size:.9rem;border-radius:34px 34px 0 0;font-weight:500}
+footer .logo{display:block;margin-bottom:8px;font-size:1.6rem}
 footer ul{list-style:none;margin:14px auto;max-width:560px}
 footer li{margin-bottom:6px}
-footer a{color:var(--gold)}
-.wafloat{position:fixed;right:16px;bottom:16px;background:#25D366;color:#06210f;border-radius:50px;padding:12px 18px;font-weight:600;z-index:60;box-shadow:0 6px 18px rgba(0,0,0,.25);font-size:.92rem}
-.ov{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;z-index:80}
+footer a{color:var(--pink2);font-weight:700}
+
+.wafloat{position:fixed;right:14px;bottom:14px;background:#25D366;color:#06210f;border-radius:50px;padding:12px 18px;font-weight:700;z-index:60;box-shadow:0 8px 20px rgba(0,0,0,.22);font-size:.92rem}
+
+/* cart drawer */
+.ov{position:fixed;inset:0;background:rgba(74,51,64,.45);display:none;z-index:80}
 .ov.show{display:block}
-.drawer{position:fixed;top:0;right:0;height:100%;width:min(400px,100%);background:#fff;z-index:90;transform:translateX(100%);transition:.3s;display:flex;flex-direction:column}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(400px,100%);background:var(--cream);z-index:90;transform:translateX(100%);transition:.3s;display:flex;flex-direction:column;border-radius:26px 0 0 26px}
 .drawer.show{transform:none}
-.dh{display:flex;justify-content:space-between;align-items:center;padding:16px;border-bottom:1px solid var(--line)}
-.dh button{background:none;border:0;font-size:1.7rem}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;border-bottom:1px solid var(--line)}
+.dh h3{color:var(--pink2)}
+.dh button{background:none;border:0;font-size:1.8rem;color:var(--muted)}
 .items{flex:1;overflow:auto;padding:8px 16px}
 .it{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
-.thumb{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#f4dcd8,#f8ecd5);background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
-.it .in{flex:1;font-size:.9rem}
-.qty{display:flex;align-items:center;gap:8px;margin-top:4px}
-.qty button{width:26px;height:26px;border-radius:50%;border:1px solid var(--line);background:#fff}
-.rm{background:none;border:0;font-size:1.3rem;color:var(--muted)}
-.df{padding:16px;border-top:1px solid var(--line)}
-.row{display:flex;justify-content:space-between;font-size:.92rem;margin-bottom:4px}
-.row.t{font-weight:600;font-size:1.05rem;margin:8px 0 12px}
-.modal{position:fixed;inset:0;z-index:100;display:none;align-items:flex-end;justify-content:center;background:rgba(0,0,0,.5)}
+.thumb{width:58px;height:58px;border-radius:14px;background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;flex:0 0 auto;font-size:1.5rem}
+.it .in{flex:1;font-size:.9rem;font-weight:600}
+.qty{display:flex;align-items:center;gap:10px;margin-top:4px}
+.qty button{width:26px;height:26px;border-radius:50%;border:2px solid var(--pink);background:#fff;color:var(--pink2);font-weight:700}
+.rm{background:none;border:0;font-size:1.4rem;color:var(--muted)}
+.df{padding:16px 18px;border-top:1px solid var(--line);background:#fff}
+.row{display:flex;justify-content:space-between;font-size:.92rem;margin-bottom:4px;font-weight:500}
+.row.t{font-weight:700;font-size:1.1rem;margin:8px 0 12px;color:var(--pink2)}
+
+/* checkout */
+.modal{position:fixed;inset:0;z-index:100;display:none;align-items:flex-end;justify-content:center;background:rgba(74,51,64,.5)}
 .modal.show{display:flex}
-.mbox{background:#fff;width:min(520px,100%);max-height:94vh;overflow:auto;border-radius:20px 20px 0 0;padding:20px}
-@media(min-width:700px){.modal{align-items:center}.mbox{border-radius:20px}}
+.mbox{background:var(--cream);width:min(520px,100%);max-height:94vh;overflow:auto;border-radius:26px 26px 0 0;padding:20px}
+@media(min-width:700px){.modal{align-items:center}.mbox{border-radius:26px}}
 .mh{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
-.mh button{background:none;border:0;font-size:1.7rem}
-label{display:block;font-size:.85rem;margin:10px 0 4px;color:var(--muted)}
-input,textarea{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;font-family:inherit;font-size:.95rem;background:#fff}
+.mh h3{color:var(--pink2)}
+.mh button{background:none;border:0;font-size:1.8rem;color:var(--muted)}
+label{display:block;font-size:.85rem;margin:10px 0 4px;color:var(--muted);font-weight:600}
+input,textarea{width:100%;padding:11px 14px;border:2px solid var(--line);border-radius:14px;font-family:inherit;font-size:.95rem;background:#fff;color:var(--ink)}
+input:focus,textarea:focus{outline:none;border-color:var(--pink)}
 textarea{resize:vertical;min-height:70px}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.opt{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:10px;padding:11px 12px;margin-top:8px;font-size:.92rem}
+.opt{display:flex;align-items:center;gap:10px;border:2px solid var(--line);border-radius:14px;padding:11px 14px;margin-top:8px;font-size:.92rem;background:#fff;color:var(--ink)}
 .opt input{width:auto}
-.upi{display:none;background:#fdf3f1;border:1px dashed var(--rose);border-radius:12px;padding:12px;margin-top:10px;font-size:.88rem}
+.upi{display:none;background:#fff0f5;border:2px dashed var(--pink);border-radius:16px;padding:12px;margin-top:10px;font-size:.88rem}
 .note{font-size:.8rem;color:var(--muted);margin-top:10px}
-.ok{display:none;text-align:center;padding:20px 6px}
-.ok h2{margin-bottom:8px}
+.ok{display:none;text-align:center;padding:22px 6px}
+.ok h2{margin-bottom:8px;color:var(--pink2)}
 </style>
 </head>
 <body>
@@ -97,283 +140,30 @@ textarea{resize:vertical;min-height:70px}
 <script>
 const CONFIG = {
   brand: "Sample Jewels",
-  tagline: "Curated jewellery & accessories",
-  whatsapp: "91XXXXXXXXXX",          // client's WhatsApp number with 91, no + or spaces
+  tagline: "Cute, curated jewellery & accessories",
+  whatsapp: "91XXXXXXXXXX",          // WhatsApp number with 91, no + or spaces
   instagram: "your_instagram_handle", // without @
-  upiId: "yourname@upi",              // client's UPI ID
+  upiId: "yourname@upi",              // UPI ID
   upiName: "Sample Jewels",
-  codEnabled: true,                   // set false if the client does not offer COD
-  codFee: 0,                          // extra charge for COD in rupees (0 = none)
+  codEnabled: true,                   // set false if COD is not offered
+  codFee: 0,                          // extra COD charge in rupees (0 = none)
   shipping: 60,                       // shipping charge in rupees
   freeShippingAbove: 999,             // free shipping above this amount
-  policy: [                           // edit as per the client's own policy
+  policy: [                           // edit as per the policy
     "Ships across India in 3-7 working days.",
     "Please record an unboxing video for any damage claim.",
-    "Return and refund rules: edit as per the client's policy."
+    "Return and refund rules: edit as per the policy."
   ]
 };
 
-const CATS = ["All","Earrings","Necklaces","Bracelets","Rings","Watches","Hampers"];
+const CATS = [
+  {n:"All",e:"🛍️"},{n:"Earrings",e:"✨"},{n:"Necklaces",e:"💎"},
+  {n:"Bracelets",e:"🌸"},{n:"Rings",e:"💍"},{n:"Watches",e:"⌚"},{n:"Hampers",e:"🎁"}
+];
 
-// Products: img can be left empty, or use a path like "images/pearl.jpg" (upload photos to the GitHub repo)
+// Products: img can be empty, or a path like "images/pearl.jpg" (upload photos to the GitHub repo)
 const PRODUCTS = [
   {id:1, name:"Pearl Drop Earrings", cat:"Earrings", price:299, mrp:499, img:"", emoji:"✨"},
   {id:2, name:"Gold Hoop Earrings", cat:"Earrings", price:249, mrp:399, img:"", emoji:"✨"},
   {id:3, name:"Floral Stud Earrings", cat:"Earrings", price:199, mrp:349, img:"", emoji:"✨"},
   {id:4, name:"Heart Pendant Necklace", cat:"Necklaces", price:399, mrp:649, img:"", emoji:"💎"},
-  {id:5, name:"Layered Chain Necklace", cat:"Necklaces", price:449, mrp:699, img:"", emoji:"💎"},
-  {id:6, name:"Star Pendant Necklace", cat:"Necklaces", price:349, mrp:549, img:"", emoji:"💎"},
-  {id:7, name:"Flower Charm Bracelet", cat:"Bracelets", price:299, mrp:499, img:"", emoji:"🌸"},
-  {id:8, name:"Knot Chain Bracelet", cat:"Bracelets", price:279, mrp:449, img:"", emoji:"🌸"},
-  {id:9, name:"Pearl Beaded Bracelet", cat:"Bracelets", price:329, mrp:549, img:"", emoji:"🌸"},
-  {id:10, name:"Adjustable Gold Ring", cat:"Rings", price:199, mrp:349, img:"", emoji:"💍"},
-  {id:11, name:"Twin Band Ring", cat:"Rings", price:229, mrp:399, img:"", emoji:"💍"},
-  {id:12, name:"Crystal Stone Ring", cat:"Rings", price:249, mrp:429, img:"", emoji:"💍"},
-  {id:13, name:"Classic Gold Watch", cat:"Watches", price:899, mrp:1399, img:"", emoji:"⌚"},
-  {id:14, name:"Silver Mesh Watch", cat:"Watches", price:849, mrp:1299, img:"", emoji:"⌚"},
-  {id:15, name:"Gift Hamper - Classic", cat:"Hampers", price:799, mrp:1099, img:"", emoji:"🎁"},
-  {id:16, name:"Gift Hamper - Premium", cat:"Hampers", price:1299, mrp:1799, img:"", emoji:"🎁"}
-];
-</script>
-<!-- ============ END OF EDIT SECTION ============ -->
-
-<header>
-  <div class="wrap hd">
-    <a href="#top" class="logo" id="logo"></a>
-    <button class="cartbtn" onclick="openCart()">Cart<span id="count">0</span></button>
-  </div>
-</header>
-
-<section class="hero" id="top">
-  <div class="wrap">
-    <h1 id="heroTitle"></h1>
-    <p id="heroTag"></p>
-    <a href="#shop" class="btn">Shop Now</a>
-  </div>
-</section>
-
-<section id="shop">
-  <div class="wrap">
-    <h2 class="sec">Shop by Category</h2>
-    <p class="sub">Tap a category to see everything in it</p>
-    <div class="tabs" id="tabs"></div>
-    <div class="grid" id="grid"></div>
-
-    <div class="trust">
-      <div class="tb"><b>Order on WhatsApp</b>Your order is confirmed with us directly on WhatsApp.</div>
-      <div class="tb"><b>UPI &amp; COD</b>Pay the way you like (COD where available).</div>
-      <div class="tb"><b>Shipping Across India</b>Safely packed and shipped to your door.</div>
-      <div class="tb"><b>Chat With Us</b>Questions? Message us on WhatsApp or Instagram.</div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <span class="logo" id="flogo"></span>
-  <p><a id="igLink" target="_blank" rel="noopener">Instagram</a> &middot; <a class="waLink" target="_blank" rel="noopener">WhatsApp</a></p>
-  <ul id="policy"></ul>
-  <p>&copy; 2026 <span id="fbrand"></span>. All rights reserved.</p>
-</footer>
-
-<a class="wafloat waLink" target="_blank" rel="noopener">Chat on WhatsApp</a>
-
-<div class="ov" id="ov" onclick="closeCart()"></div>
-<aside class="drawer" id="drawer">
-  <div class="dh"><h3>Your Cart</h3><button onclick="closeCart()" aria-label="Close">&times;</button></div>
-  <div class="items" id="items"></div>
-  <div class="df">
-    <div class="row"><span>Subtotal</span><span id="sub"></span></div>
-    <div class="row"><span>Shipping</span><span id="ship"></span></div>
-    <div class="row t"><span>Total</span><span id="tot"></span></div>
-    <button class="btn full" id="checkoutBtn" onclick="openCheckout()">Checkout</button>
-    <p class="note" id="shipNote"></p>
-  </div>
-</aside>
-
-<div class="modal" id="modal">
-  <div class="mbox">
-    <div id="formView">
-      <div class="mh"><h3>Checkout &middot; <span id="orderId"></span></h3><button onclick="closeCheckout()" aria-label="Close">&times;</button></div>
-      <form id="coForm">
-        <label for="cName">Full name</label>
-        <input id="cName" required autocomplete="name">
-        <label for="cPhone">Phone number (10 digits)</label>
-        <input id="cPhone" required inputmode="numeric" maxlength="10" autocomplete="tel">
-        <label for="cAddr">Full address</label>
-        <textarea id="cAddr" required autocomplete="street-address"></textarea>
-        <div class="two">
-          <div><label for="cCity">City</label><input id="cCity" required></div>
-          <div><label for="cState">State</label><input id="cState" required></div>
-        </div>
-        <label for="cPin">Pincode</label>
-        <input id="cPin" required inputmode="numeric" maxlength="6">
-
-        <label>Payment method</label>
-        <label class="opt"><input type="radio" name="pay" value="UPI" checked onchange="updatePay()"> UPI (pay now)</label>
-        <label class="opt" id="codOpt"><input type="radio" name="pay" value="COD" onchange="updatePay()"> Cash on Delivery</label>
-
-        <div class="upi" id="upiBox">
-          <p>Pay <b id="upiAmt"></b> to UPI ID: <b id="upiIdShow"></b></p>
-          <p style="margin:8px 0"><a class="btn out" id="upiLink" style="padding:8px 16px">Open UPI app (mobile)</a></p>
-          <label for="cUtr" style="margin-top:6px">After paying, enter UPI transaction / UTR number</label>
-          <input id="cUtr" placeholder="e.g. 123456789012">
-        </div>
-
-        <div class="row" id="codfee" style="display:none;margin-top:12px"><span>COD charge</span><span id="codfeeAmt"></span></div>
-        <div class="row t" style="margin-top:14px"><span>Amount to pay</span><span id="gtot"></span></div>
-        <button class="btn full" type="submit">Place Order on WhatsApp</button>
-        <p class="note">WhatsApp will open with your order details. <b>Please press Send</b> there, your order is confirmed only after we receive that message.</p>
-      </form>
-    </div>
-    <div class="ok" id="okView">
-      <h2>Almost done!</h2>
-      <p>WhatsApp has opened with your order <b id="okId"></b>.<br><b>Press Send</b> there to confirm it.</p>
-      <p style="margin:14px 0"><a class="btn" id="reopen" target="_blank" rel="noopener">Open WhatsApp again</a></p>
-      <button class="btn out" onclick="closeCheckout()">Close</button>
-    </div>
-  </div>
-</div>
-
-<script>
-const $ = s => document.querySelector(s);
-const money = n => "\u20B9" + n.toLocaleString("en-IN");
-let cart = {}; try { cart = JSON.parse(localStorage.getItem("cart") || "{}"); } catch(e) {}
-function save(){ try { localStorage.setItem("cart", JSON.stringify(cart)); } catch(e) {} }
-let currentCat = "All", orderId = "", lastWaUrl = "";
-
-// Static texts
-document.title = CONFIG.brand + " | Jewellery & Accessories";
-$("#logo").textContent = CONFIG.brand;
-$("#flogo").textContent = CONFIG.brand;
-$("#fbrand").textContent = CONFIG.brand;
-$("#heroTitle").textContent = CONFIG.brand;
-$("#heroTag").textContent = CONFIG.tagline;
-$("#igLink").href = "https://instagram.com/" + CONFIG.instagram;
-document.querySelectorAll(".waLink").forEach(a => a.href = "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent("Hi, I have a question about your products"));
-$("#policy").innerHTML = CONFIG.policy.map(p => "<li>" + p + "</li>").join("");
-$("#upiIdShow").textContent = CONFIG.upiId;
-$("#shipNote").textContent = "Free shipping on orders above " + money(CONFIG.freeShippingAbove);
-$("#codfeeAmt").textContent = money(CONFIG.codFee);
-if (!CONFIG.codEnabled) $("#codOpt").remove();
-
-// Categories + products
-$("#tabs").innerHTML = CATS.map(c => `<button class="tab${c==="All"?" on":""}" onclick="setCat('${c}',this)">${c}</button>`).join("");
-function setCat(c, el){
-  currentCat = c;
-  document.querySelectorAll(".tab").forEach(t => t.classList.remove("on"));
-  el.classList.add("on");
-  renderProducts();
-}
-function renderProducts(){
-  const list = PRODUCTS.filter(p => currentCat === "All" || p.cat === currentCat);
-  $("#grid").innerHTML = list.map(p => `
-    <div class="card">
-      <div class="pic" style="${p.img ? `background-image:url('${p.img}')` : ""}">${p.img ? "" : (p.emoji || "\u2726")}</div>
-      <div class="cb">
-        <h3>${p.name}</h3>
-        <div class="pr"><b>${money(p.price)}</b>${p.mrp ? `<s>${money(p.mrp)}</s>` : ""}</div>
-        <button class="btn" onclick="addToCart(${p.id})">Add to Cart</button>
-      </div>
-    </div>`).join("");
-}
-
-// Cart
-function totals(){
-  let sub = 0;
-  for (const id in cart){ const p = PRODUCTS.find(x => x.id == id); if (p) sub += p.price * cart[id]; }
-  const ship = sub === 0 ? 0 : (sub >= CONFIG.freeShippingAbove ? 0 : CONFIG.shipping);
-  return {sub, ship};
-}
-function updateCount(){
-  let n = 0; for (const id in cart) n += cart[id];
-  $("#count").textContent = n;
-}
-function addToCart(id){ cart[id] = (cart[id] || 0) + 1; save(); updateCount(); openCart(); }
-function chg(id, d){
-  cart[id] = (cart[id] || 0) + d;
-  if (cart[id] <= 0) delete cart[id];
-  save(); updateCount(); renderCart();
-}
-function renderCart(){
-  const ids = Object.keys(cart).filter(id => PRODUCTS.find(p => p.id == id));
-  $("#items").innerHTML = ids.length ? ids.map(id => {
-    const p = PRODUCTS.find(x => x.id == id);
-    return `<div class="it">
-      <div class="thumb" style="${p.img ? `background-image:url('${p.img}')` : ""}">${p.img ? "" : (p.emoji || "\u2726")}</div>
-      <div class="in"><div>${p.name}</div><div class="pr"><b>${money(p.price)}</b></div>
-        <div class="qty"><button onclick="chg(${p.id},-1)">-</button><span>${cart[id]}</span><button onclick="chg(${p.id},1)">+</button></div>
-      </div>
-      <button class="rm" onclick="chg(${p.id},-999)" aria-label="Remove">&times;</button>
-    </div>`;
-  }).join("") : '<p style="text-align:center;color:var(--muted);padding:40px 0">Your cart is empty</p>';
-  const t = totals();
-  $("#sub").textContent = money(t.sub);
-  $("#ship").textContent = t.ship ? money(t.ship) : "Free";
-  $("#tot").textContent = money(t.sub + t.ship);
-  $("#checkoutBtn").disabled = !ids.length;
-}
-function openCart(){ renderCart(); $("#drawer").classList.add("show"); $("#ov").classList.add("show"); }
-function closeCart(){ $("#drawer").classList.remove("show"); $("#ov").classList.remove("show"); }
-
-// Checkout
-function payMethod(){ return document.querySelector('input[name="pay"]:checked').value; }
-function grand(){ const t = totals(); return t.sub + t.ship + (payMethod() === "COD" ? CONFIG.codFee : 0); }
-function updatePay(){
-  const m = payMethod(), g = grand();
-  $("#upiBox").style.display = m === "UPI" ? "block" : "none";
-  $("#codfee").style.display = (m === "COD" && CONFIG.codFee) ? "flex" : "none";
-  $("#gtot").textContent = money(g);
-  $("#upiAmt").textContent = money(g);
-  $("#upiLink").href = "upi://pay?pa=" + encodeURIComponent(CONFIG.upiId) + "&pn=" + encodeURIComponent(CONFIG.upiName) + "&am=" + g + "&cu=INR&tn=" + orderId;
-}
-function openCheckout(){
-  if (!Object.keys(cart).length) return;
-  orderId = "ORD" + Math.floor(10000 + Math.random() * 90000);
-  $("#orderId").textContent = orderId;
-  closeCart();
-  $("#formView").style.display = "block";
-  $("#okView").style.display = "none";
-  updatePay();
-  $("#modal").classList.add("show");
-}
-function closeCheckout(){ $("#modal").classList.remove("show"); }
-
-$("#coForm").addEventListener("submit", e => {
-  e.preventDefault();
-  const name = $("#cName").value.trim(), phone = $("#cPhone").value.trim(), addr = $("#cAddr").value.trim();
-  const city = $("#cCity").value.trim(), state = $("#cState").value.trim(), pin = $("#cPin").value.trim();
-  const m = payMethod(), utr = $("#cUtr").value.trim();
-  if (!/^[6-9]\d{9}$/.test(phone)) { alert("Please enter a valid 10-digit phone number."); return; }
-  if (!/^\d{6}$/.test(pin)) { alert("Please enter a valid 6-digit pincode."); return; }
-  if (m === "UPI" && utr.length < 6) { alert("Please pay by UPI first, then enter the transaction / UTR number."); return; }
-
-  const t = totals();
-  let n = 0;
-  const lines = Object.keys(cart).filter(id => PRODUCTS.find(p => p.id == id)).map(id => {
-    const p = PRODUCTS.find(x => x.id == id); n++;
-    return n + ". " + p.name + " x" + cart[id] + " = " + money(p.price * cart[id]);
-  });
-  const msg =
-    "New Order " + orderId + "\n\n" +
-    "Items:\n" + lines.join("\n") + "\n\n" +
-    "Subtotal: " + money(t.sub) + "\n" +
-    "Shipping: " + (t.ship ? money(t.ship) : "Free") + "\n" +
-    (m === "COD" && CONFIG.codFee ? "COD charge: " + money(CONFIG.codFee) + "\n" : "") +
-    "Total: " + money(grand()) + "\n\n" +
-    "Payment: " + (m === "UPI" ? "UPI (UTR: " + utr + ")" : "Cash on Delivery") + "\n\n" +
-    "Name: " + name + "\nPhone: " + phone + "\n" +
-    "Address: " + addr + ", " + city + ", " + state + " - " + pin;
-
-  lastWaUrl = "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(msg);
-  window.open(lastWaUrl, "_blank");
-  $("#okId").textContent = orderId;
-  $("#reopen").href = lastWaUrl;
-  $("#formView").style.display = "none";
-  $("#okView").style.display = "block";
-  cart = {}; save(); updateCount(); e.target.reset(); updatePay();
-});
-
-renderProducts(); updateCount();
-</script>
-</body>
-</html>
